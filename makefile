@@ -23,7 +23,7 @@ include src/makefile-options
 
 # which layouts to compile (will override the variable in src/makefile-options)
 # --- default
-LAYOUT := qwerty-kinesis-mod
+LAYOUT := dvorak-qwerty-media-macros
 # --- all
 LAYOUTS := qwerty-kinesis-mod dvorak-kinesis-mod colemak-symbol-mod workman-p-kinesis-mod
 
@@ -58,8 +58,8 @@ SCRIPTS := build-scripts
 all: dist
 
 clean:
-	git clean -dX  # remove ignored files and directories
-	-rm -r '$(BUILD)'
+	git clean -dXf	# remove ignored files and directories
+	-rm -rf '$(BUILD)'
 
 checkin:
 	-git commit -a
@@ -107,9 +107,9 @@ dist: \
 
 zip: dist
 	( cd '$(BUILD)/$(TARGET)'; \
-	  zip '../$(TARGET).zip' \
-	      -r * .* \
-	      -x '..*' )
+		zip '../$(TARGET).zip' \
+				-r * .* \
+				-x '..*' )
 
 zip-all:
 	for layout in $(LAYOUTS); do \
