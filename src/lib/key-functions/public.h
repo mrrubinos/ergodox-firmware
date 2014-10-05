@@ -64,6 +64,7 @@
   void kbfun_layer_pop_numpad              (void);
   void kbfun_mediakey_press_release        (void);
   void kbfun_altgr_e_press_release         (void);
+  void kbfun_altgr_n_press_release         (void);
   void kbfun_arrow_write                   (void);
   void kbfun_parenthesis_double_quote_write(void);
   void kbfun_double_quote_parenthesis_write(void);

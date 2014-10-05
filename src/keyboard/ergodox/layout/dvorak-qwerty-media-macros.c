@@ -56,6 +56,7 @@ void kbfun_layer_pop_all(void) {
 #define  dbtldr   &kbfun_jump_to_bootloader
 #define  sshprre  &kbfun_shift_press_release
 #define  saeprre  &kbfun_altgr_e_press_release
+#define  sanprre  &kbfun_altgr_n_press_release
 #define  s2kcap   &kbfun_2_keys_capslock_press_release
 #define  slpunum  &kbfun_layer_push_numpad
 #define  slponum  &kbfun_layer_pop_numpad
@@ -158,7 +159,7 @@ KB_MATRIX_LAYER(
   // right hand
   0,  0,  0,  0,  0,  0,  0,  
   0,  KEY_Dash_Underscore,  KEY_Equal_Plus, KEY_Backslash_Pipe, KEY_Semicolon_Colon,  KEY_SingleQuote_DoubleQuote,  0,  
-  0,  0,  0,  0,  0,  0,  
+  0,  0,  0,  KEY_n_N,  0,  0,  
   0,  'm',  0,  'm',  0,  0,  0,  
   0,  0,  0,  0,  0,  
   0,  0,  
@@ -255,7 +256,7 @@ KB_MATRIX_LAYER(
   // right hand
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
   NULL, kprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
-  NULL, NULL, NULL, NULL, NULL, NULL, 
+  NULL, NULL, NULL, sanprre, NULL, NULL, 
   NULL, vbuff, NULL, vsave, NULL, NULL, ktrans, 
   NULL, NULL, NULL, NULL, NULL, 
   NULL, NULL, 
@@ -352,7 +353,7 @@ KB_MATRIX_LAYER(
   // right hand
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
   NULL, kprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
-  NULL, NULL, NULL, NULL, NULL, NULL, 
+  NULL, NULL, NULL, kprrel, NULL, NULL, 
   NULL, NULL, NULL, NULL, NULL, NULL, ktrans, 
   NULL, NULL, NULL, NULL, NULL, 
   NULL, NULL, 

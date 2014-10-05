@@ -182,6 +182,7 @@ void kbfun_mediakey_press_release(void) {
  * symbol functions
  * ------------------------------------------------------------------------- */
 
+
 /*
  * [name]
  *   AltGr + e + press|release
@@ -204,6 +205,37 @@ void kbfun_altgr_e_press_release(void) {
 
   _kbfun_press_release(false, KEY_RightAlt);
   _kbfun_press_release(false, KEY_e_E);
+  usb_keyboard_send();
+  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
+ 
+  _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
+  _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
+  kbfun_press_release();
+}
+
+
+/*
+ * [name]
+ *   AltGr + n + press|release
+ *
+ * [description]
+ *   Generate a 'AltGr + n' (acute accent) press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_altgr_n_press_release(void) {
+  /* Remember old state of shift before disabling it */
+  bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
+  bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
+  _kbfun_press_release(false, KEY_RightShift);
+  _kbfun_press_release(false, KEY_LeftShift);
+
+  _kbfun_press_release(true, KEY_RightAlt);
+  _kbfun_press_release(true, KEY_n_N);
+  usb_keyboard_send();
+  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
+
+  _kbfun_press_release(false, KEY_RightAlt);
+  _kbfun_press_release(false, KEY_n_N);
   usb_keyboard_send();
   _delay_ms(MAKEFILE_DEBOUNCE_TIME);
  
