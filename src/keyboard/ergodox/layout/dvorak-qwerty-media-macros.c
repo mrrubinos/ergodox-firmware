@@ -64,6 +64,9 @@ void kbfun_layer_pop_all(void) {
 #define  warrow   &kbfun_arrow_write
 #define  wpdq     &kbfun_parenthesis_double_quote_write
 #define  wdqp     &kbfun_double_quote_parenthesis_write
+#define  wlt2dq   &kbfun_lt2_double_quote_write
+#define  wdqgt2   &kbfun_double_quote_gt2_write
+
 
 #define vsave     &kbfun_vim_save
 #define vsaveq    &kbfun_vim_save_and_quit
@@ -149,7 +152,7 @@ KB_MATRIX_LAYER(
   0,  
   // left hand
   0,  0,  0,  0,  0,  0,  0,  
-  0,  0,  'm',  'm',  'm',  0,  0,  
+  0,  'm',  'm',  'm',  'm',  'm',  0,  
   0,  KEY_a_A,  KEY_o_O,  KEY_e_E,  KEY_u_U,  KEY_i_I,  
   0,  0,  'm',  0,  0,  0,  0,  
   0,  0,  0,  0,  0,  
@@ -158,7 +161,7 @@ KB_MATRIX_LAYER(
   0,  0,  0,  
   // right hand
   0,  0,  0,  0,  0,  0,  0,  
-  0,  KEY_Dash_Underscore,  KEY_Equal_Plus, KEY_Backslash_Pipe, KEY_Semicolon_Colon,  KEY_SingleQuote_DoubleQuote,  0,  
+  0,  KEY_6_Caret,  KEY_4_Dollar, KEY_Backslash_Pipe, KEY_Semicolon_Colon,  KEY_SingleQuote_DoubleQuote,  0,  
   0,  0,  0,  KEY_n_N,  0,  0,  
   0,  'm',  0,  'm',  0,  0,  0,  
   0,  0,  0,  0,  0,  
@@ -246,7 +249,7 @@ KB_MATRIX_LAYER(
   NULL, 
   // left hand
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
-  NULL, NULL, wpdq, warrow, wdqp, NULL, NULL, 
+  NULL, wlt2dq, wpdq, warrow, wdqp, wdqgt2, NULL, 
   NULL, saeprre, saeprre, saeprre, saeprre, saeprre,
   ktrans, NULL, vsaveq, NULL, NULL, NULL, NULL, 
   NULL, NULL, NULL, NULL, NULL, 
@@ -255,7 +258,7 @@ KB_MATRIX_LAYER(
   NULL, NULL, NULL, 
   // right hand
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
-  NULL, kprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
+  NULL, sshprre, sshprre, kprrel, kprrel, kprrel, NULL, 
   NULL, NULL, NULL, sanprre, NULL, NULL, 
   NULL, vbuff, NULL, vsave, NULL, NULL, ktrans, 
   NULL, NULL, NULL, NULL, NULL, 
@@ -352,7 +355,7 @@ KB_MATRIX_LAYER(
   NULL, NULL, NULL, 
   // right hand
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
-  NULL, kprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
+  NULL, sshprre, sshprre, kprrel, kprrel, kprrel, NULL, 
   NULL, NULL, NULL, kprrel, NULL, NULL, 
   NULL, NULL, NULL, NULL, NULL, NULL, ktrans, 
   NULL, NULL, NULL, NULL, NULL, 

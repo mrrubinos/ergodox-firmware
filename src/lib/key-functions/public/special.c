@@ -317,6 +317,59 @@ void kbfun_double_quote_parenthesis_write(void) {
   _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
 }
 
+
+/*
+ * [name]
+ *   '<<"' write 
+ *
+ * [description]
+ *   Writes the string '<<"' 
+ */
+void kbfun_lt2_double_quote_write(void) {
+  /* Remember old state of shift before disabling it */
+  bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
+  bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
+  _kbfun_press_release(false, KEY_RightShift);
+  _kbfun_press_release(false, KEY_LeftShift);
+
+  // '<'
+  write_shifted_code(KEY_Comma_LessThan);
+  // '<'
+  write_shifted_code(KEY_Comma_LessThan);
+  // '"'
+  write_shifted_code(KEY_SingleQuote_DoubleQuote);
+
+  _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
+  _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
+}
+
+/*
+ * [name]
+ *   '">>' write 
+ *
+ * [description]
+ *   Writes the string '">>' 
+ */
+void kbfun_double_quote_gt2_write(void) {
+  /* Remember old state of shift before disabling it */
+  bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
+  bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
+  _kbfun_press_release(false, KEY_RightShift);
+  _kbfun_press_release(false, KEY_LeftShift);
+
+  // '"'
+  write_shifted_code(KEY_SingleQuote_DoubleQuote);
+  // '>'
+  write_shifted_code(KEY_Period_GreaterThan);
+  // '>'
+  write_shifted_code(KEY_Period_GreaterThan);
+
+  _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
+  _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
+}
+
+
+
 /*
  * [name]
  *   vim save ':w'
@@ -389,8 +442,6 @@ void kbfun_vim_buffers(void) {
   write_code(KEY_Spacebar);
   // [Tab]
   write_code(KEY_Tab);
-  // 'Enter'
-  write_code(KEY_ReturnEnter);
 
   _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
   _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);

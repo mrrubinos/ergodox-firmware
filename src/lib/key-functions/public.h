@@ -68,6 +68,8 @@
   void kbfun_arrow_write                   (void);
   void kbfun_parenthesis_double_quote_write(void);
   void kbfun_double_quote_parenthesis_write(void);
+  void kbfun_lt2_double_quote_write        (void);
+  void kbfun_double_quote_gt2_write        (void);
   void kbfun_vim_save                      (void);
   void kbfun_vim_save_and_quit             (void);
   void kbfun_vim_buffers                   (void);
