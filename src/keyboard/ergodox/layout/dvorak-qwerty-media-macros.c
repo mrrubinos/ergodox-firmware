@@ -333,7 +333,7 @@ KB_MATRIX_LAYER(
   // right hand
   ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
   ktrans, mprrel, mprrel, mprrel, mprrel, mprrel, NULL, 
-  mprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
+  mprrel, kprrel, kprrel, kprrel, kprrel, kprrel, 
   ktrans, mprrel, kprrel, kprrel, kprrel, kprrel, ktrans, 
   NULL, NULL, ktrans, ktrans, ktrans, 
   ktrans, ktrans, 
