@@ -95,7 +95,7 @@ KB_MATRIX_LAYER(
   KEY_0_RightParenthesis,  KEY_f_F,  KEY_g_G,  KEY_c_C,  KEY_r_R,  KEY_l_L,  KEY_Slash_Question, 
   KEY_d_D,  KEY_h_H,  KEY_t_T,  KEY_n_N,  KEY_s_S,  KEY_Dash_Underscore,  
   KEY_RightBracket_RightBrace,  KEY_b_B,  KEY_m_M,  KEY_w_W,  KEY_v_V,  KEY_z_Z,  KEY_RightShift, 
-  3,  KEY_CapsLock, KEY_RightGUI, KEY_RightAlt, KEY_RightControl, 
+  3,  KEY_Insert, KEY_RightGUI, KEY_RightAlt, KEY_RightControl, 
   KEY_LeftArrow,  KEY_RightArrow, 
   KEY_UpArrow,  0,  0,  
   KEY_DownArrow,  KEY_ReturnEnter,  KEY_Spacebar  
@@ -139,7 +139,7 @@ KB_MATRIX_LAYER(
   // right hand
   0,  KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10,  0,  
   0,  MEDIAKEY_AUDIO_VOL_UP, MEDIAKEY_PREV_TRACK,  MEDIAKEY_PLAY_PAUSE,  MEDIAKEY_NEXT_TRACK,  0,  0,  
-  MEDIAKEY_AUDIO_VOL_DOWN, KEY_h_H,  KEY_j_J,  KEY_k_K,  KEY_l_L,  0,  
+  MEDIAKEY_AUDIO_VOL_DOWN, KEY_h_H,  KEY_j_J,  KEY_k_K,  KEY_l_L,  KEY_CapsLock,  
   0,  MEDIAKEY_AUDIO_MUTE, KEY_LeftArrow,  KEY_DownArrow,  KEY_UpArrow,  KEY_RightArrow, 0,  
   0,  0,  0,  0,  0,  
   0,  0,  
@@ -236,7 +236,7 @@ KB_MATRIX_LAYER(
   // right hand
   ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
   ktrans, mprrel, mprrel, mprrel, mprrel, mprrel, NULL, 
-  mprrel, kprrel, kprrel, kprrel, kprrel, NULL, 
+  mprrel, kprrel, kprrel, kprrel, kprrel, kprrel, 
   ktrans, mprrel, kprrel, kprrel, kprrel, kprrel, ktrans, 
   NULL, NULL, ktrans, ktrans, ktrans, 
   ktrans, ktrans, 
