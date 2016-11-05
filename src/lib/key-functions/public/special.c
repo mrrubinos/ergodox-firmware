@@ -28,6 +28,10 @@
 #define  WAS_PRESSED   main_arg_was_pressed
 
 
+void write_code(uint8_t keycode);
+void write_shifted_code(uint8_t keycode);
+void write_alted_code(uint8_t keycode);
+
 // ----------------------------------------------------------------------------
 
 /*
@@ -188,30 +192,110 @@ void kbfun_mediakey_press_release(void) {
  *   AltGr + e + press|release
  *
  * [description]
- *   Generate a 'AltGr + e' (acute accent) press or release before the normal keypress or
+ *   Generate a 'AltGr + e' (acute accent) press and release before the normal keypress or
  *   keyrelease
  */
 void kbfun_altgr_e_press_release(void) {
+
+  uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+
   /* Remember old state of shift before disabling it */
   bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
   bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
   _kbfun_press_release(false, KEY_RightShift);
   _kbfun_press_release(false, KEY_LeftShift);
 
-  _kbfun_press_release(true, KEY_RightAlt);
-  _kbfun_press_release(true, KEY_e_E);
-  usb_keyboard_send();
-  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
+  write_alted_code(KEY_e_E);
 
-  _kbfun_press_release(false, KEY_RightAlt);
-  _kbfun_press_release(false, KEY_e_E);
-  usb_keyboard_send();
-  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
- 
   _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
   _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
-  kbfun_press_release();
+ 
+  write_code(keycode);
+
 }
+
+/*
+ * [name]
+ *   AltGr + e + Shift & press|release
+ *
+ * [description]
+ *   Generate a 'AltGr + e' (acute accent) press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_altgr_e_shifted_press_release(void) {
+
+  uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+
+  /* Remember old state of shift before disabling it */
+  bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
+  bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
+  _kbfun_press_release(false, KEY_RightShift);
+  _kbfun_press_release(false, KEY_LeftShift);
+
+  write_alted_code(KEY_e_E);
+
+  _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
+  _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
+ 
+  write_shifted_code(keycode);
+
+}
+
+/*
+ * [name]
+ *   AltGr + u + press|release
+ *
+ * [description]
+ *   Generate a 'AltGr + u' (diaeresis) press and release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_altgr_u_press_release(void) {
+
+  uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+
+  /* Remember old state of shift before disabling it */
+  bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
+  bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
+  _kbfun_press_release(false, KEY_RightShift);
+  _kbfun_press_release(false, KEY_LeftShift);
+
+  write_alted_code(KEY_u_U);
+
+  _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
+  _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
+ 
+  write_code(keycode);
+
+}
+
+/*
+ * [name]
+ *   AltGr + u + Shift & press|release
+ *
+ * [description]
+ *   Generate a 'AltGr + u' (diaeresis) press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_altgr_u_shifted_press_release(void) {
+
+  uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+
+  /* Remember old state of shift before disabling it */
+  bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
+  bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
+  _kbfun_press_release(false, KEY_RightShift);
+  _kbfun_press_release(false, KEY_LeftShift);
+
+  write_alted_code(KEY_u_U);
+
+  _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
+  _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
+ 
+  write_shifted_code(keycode);
+
+}
+
+
 
 
 /*
@@ -219,30 +303,59 @@ void kbfun_altgr_e_press_release(void) {
  *   AltGr + n + press|release
  *
  * [description]
- *   Generate a 'AltGr + n' (acute accent) press or release before the normal keypress or
+ *   Generate a 'AltGr + n' (n tilde) press or release before the normal keypress or
  *   keyrelease
  */
 void kbfun_altgr_n_press_release(void) {
+
+  uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+
   /* Remember old state of shift before disabling it */
   bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
   bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
   _kbfun_press_release(false, KEY_RightShift);
   _kbfun_press_release(false, KEY_LeftShift);
 
-  _kbfun_press_release(true, KEY_RightAlt);
-  _kbfun_press_release(true, KEY_n_N);
-  usb_keyboard_send();
-  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
+  write_alted_code(KEY_n_N);
 
-  _kbfun_press_release(false, KEY_RightAlt);
-  _kbfun_press_release(false, KEY_n_N);
-  usb_keyboard_send();
-  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
- 
   _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
   _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
-  kbfun_press_release();
+
+  write_code(keycode);
+
+
 }
+
+
+/*
+ * [name]
+ *   AltGr + n + Shift & press|release
+ *
+ * [description]
+ *   Generate a 'AltGr + n' (n tilde) press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_altgr_n_shifted_press_release(void) {
+
+  uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+
+  /* Remember old state of shift before disabling it */
+  bool right_shift_was_pressed = _kbfun_is_pressed(KEY_RightShift); 
+  bool left_shift_was_pressed = _kbfun_is_pressed(KEY_LeftShift); 
+  _kbfun_press_release(false, KEY_RightShift);
+  _kbfun_press_release(false, KEY_LeftShift);
+
+  write_alted_code(KEY_n_N);
+
+  _kbfun_press_release(right_shift_was_pressed, KEY_RightShift);
+  _kbfun_press_release(left_shift_was_pressed, KEY_LeftShift);
+ 
+  write_shifted_code(keycode);
+
+}
+
+
+
 
 /* ----------------------------------------------------------------------------
  * macro functions
@@ -471,6 +584,19 @@ void write_shifted_code(uint8_t keycode) {
   usb_keyboard_send();
   _delay_ms(MAKEFILE_DEBOUNCE_TIME);
 }
+
+void write_alted_code(uint8_t keycode) {
+  _kbfun_press_release(true, KEY_RightAlt);
+  _kbfun_press_release(true, keycode);
+  usb_keyboard_send();
+  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
+
+  _kbfun_press_release(false, KEY_RightAlt);
+  _kbfun_press_release(false, keycode);
+  usb_keyboard_send();
+  _delay_ms(MAKEFILE_DEBOUNCE_TIME);
+}
+
 
 
 
